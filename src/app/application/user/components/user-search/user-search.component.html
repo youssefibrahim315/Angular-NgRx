@@ -1,0 +1,23 @@
+<section class="user-search">
+    <h1>User Search</h1>
+    <input #input type="text" placeholder="Search users" (input)="onSearch(input.value)" />
+    <div *ngIf="loading | async">
+        is loading 
+    </div>
+
+    <div class="user-list">
+        <div *ngFor="let user of users | async">
+            <div class="user-item">
+                <img [src]="user.avatar_url"/>
+                <div class="user-details">
+                    <h2>{{ user.login }}</h2>
+                    <a [routerLink]="user.html_url">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="error | async" class="error-message">
+        An error occurred: {{ error | async }}
+    </div>
+</section>
