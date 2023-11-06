@@ -16,7 +16,7 @@ import { reducer } from './core/store/user/user-store.reducer';
     BrowserModule,
     AppRoutingModule,
     // StoreModule.forRoot({}, {}),
-    StoreModule.forRoot({product: reducer}),
+    StoreModule.forRoot({user: reducer}),
     EffectsModule.forRoot([]),
     UserModule
   ],
